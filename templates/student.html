@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    student
+{% endblock %}
+
+{% block main %}
+    <script>
+        function getLocation()
+        {
+            if (navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
+    
+        function showPosition(position)
+        {
+            document.getElementById("latitude").value = position.coords.latitude; 
+            document.getElementById("longitude").value = position.coords.longitude; 
+        }
+        getLocation();
+    </script>
+    <body style="background-image: url(/static/books.jpg);">
+        
+    <h5 class="h5intro">
+        <b>
+            Now you can easily hit the "Access My Location"
+            <br>
+            button to find the tutors who are near by.
+        </b>
+    </h5>
+    <br>
+    <br>
+    <br>
+    <form action="/student" method="post" class="tutors">
+        <input style="display: none" id="latitude" name="latitude" type="text" />
+        <input style="display: none" id="longitude" name="longitude" type="text" />
+        <button class="btn btn-primary" type="submit">Access My location</button>
+    </form>
+    <div style="position: absolute; left: 10px; font: Sans-serif;">
+    {% for i in x %}
+        <div class="card mb-3 bg-primary" style="max-width: 740px; overflow: auto;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="/static/tutor.jpg" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 style="color: white;" class="card-title">Mr/Ms. {{ i['name'] }}</h5>
+                <ul class="list-group list-group-flush text-dark">
+                  <li class="list-group-item">subject: {{ i['sub'] }}</li>
+                  <li class="list-group-item">experience: {{ i['exp'] }}</li>
+                  <li class="list-group-item">Contact number: {{ i['phone'] }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+    </body>
+{% endblock %}

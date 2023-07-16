@@ -1,0 +1,99 @@
+/*nav .navbar-brand*/
+/*{*/
+    /* size for brand */
+/*    font-size: xx-large;*/
+/*}*/
+
+/* colors for brand */
+/*nav .navbar-brand .blue*/
+/*{*/
+/*    color: #537fbe;*/
+/*}*/
+/*nav .navbar-brand .red*/
+/*{*/
+/*    color: #ea433b;*/
+/*}*/
+/*nav .navbar-brand .yellow*/
+/*{*/
+/*    color: #f5b82e;*/
+/*}*/
+/*nav .navbar-brand .green*/
+/*{*/
+/*    color: #2e944b;*/
+/*}*/
+
+/*main .form-control*/
+/*{*/
+    /* center form controls */
+/*    display: inline-block;*/
+    /* override Bootstrap's 100% width for form controls */
+/*    width: auto;*/
+/*}*/
+
+/*main*/
+/*{*/
+    /* scroll horizontally as needed */
+/*    overflow-x: auto;*/
+
+    /* center contents */
+/*    text-align: center;*/
+/*}*/
+
+/*main img*/
+/*{*/
+    /* constrain images on small screens */
+/*    max-width: 100%;*/
+/*}*/
+.center
+{
+  /*margin: auto;*/
+  /*width: 50%;*/
+  /*height: 2000px;*/
+    position: fixed; /* or absolute */
+    margin: auto;
+    top: 30%;
+    left: 27%;
+}
+.reg
+{
+    position: fixed; /* or absolute */
+    margin: auto;
+    top: 20%;
+    left: 40%;
+}
+
+.card
+{
+    position: relative;
+    top: 20%;
+    left: 40%;
+}
+
+.hide
+{
+    display:none;
+}
+
+.show
+{
+    display:block;
+}
+
+.h5intro
+{
+   text-align: center;
+   top: 20%;
+   position: absolute;
+   left: 350px;
+   padding: 10px;
+   background-color: rgb(0, 100, 150);
+   color: white;
+   font: Sans-serif;
+}
+
+.tutors
+{
+    top: 10%;
+    position: absolute;
+    right: 0px;
+}

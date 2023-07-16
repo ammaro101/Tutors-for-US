@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <script>
+        function getLocation()
+        {
+            if (navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+        }
+    
+        function showPosition(position)
+        {
+            document.getElementById("latitude").value = position.coords.latitude; 
+            document.getElementById("longitude").value = position.coords.longitude; 
+        }
+        getLocation();
+    </script>
+    <body style="background-image: url(/static/black.jpg);">
+        <h5 class="h5intro" style="left: 0%;">
+            <b>
+                please enter the required information and allow the website to access your location so it become easier for students to find you, and then press Register
+            </b>
+        </h5>
+        
+        <form style="top: 40%;" class="reg" action="/register" method="post" enctype="multipart/form-data" autocomplete="off">
+                <input style="display: none" id="latitude" name="latitude" type="text" />
+                <input style="display: none" id="longitude" name="longitude" type="text" />
+            <div class="form-group">
+                <input autofocus class="form-control" name="name" placeholder="name" type="text">
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="subject">
+                      <option disabled selected value="">subject</option>
+                  {% for i in sub %}
+                      <option>{{ i }}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="experience">
+                      <option disabled selected value="">expereince</option>
+                  {% for i in exp %}
+                      <option>{{ i }}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="phone" placeholder="phone-number" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </body>
+{% endblock %}
