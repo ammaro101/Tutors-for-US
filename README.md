@@ -1,3 +1,5 @@
+This is a dynamic full stack web app I buildt using python, SQL, Flask, Django in 2020 as a final project for the CS50 course from HARVARD
+
 This is a web application that allow 
 students and tutors to reach each others, 
 it will ask tutors to provide their 
